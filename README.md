@@ -55,6 +55,7 @@ This module was created on 04/04/2018 using Terraform version 0.11.14. The lates
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12 |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 
 ## Providers
@@ -77,6 +78,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_additional_tags"></a> [additional\_tags](#input\_additional\_tags) | Additional tags appended to resources created by this module | `map(string)` | `{}` | no |
 | <a name="input_additional_vpc_ids"></a> [additional\_vpc\_ids](#input\_additional\_vpc\_ids) | List of additional VPC ID's that will be associated with this hosted zone | `list(map(string))` | `[]` | no |
 | <a name="input_default_vpc_region"></a> [default\_vpc\_region](#input\_default\_vpc\_region) | Default region of lists of the associated VPC's. | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment this Route 53 zone belongs to | `string` | n/a | yes |

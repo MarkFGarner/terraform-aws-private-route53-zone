@@ -34,3 +34,10 @@ variable "default_vpc_region" {
   type        = string
   description = "Default region of lists of the associated VPC's."
 }
+
+variable "additional_tags" {
+  type        = map(string)
+  description = "Additional tags appended to resources created by this module"
+
+  default = {}
+}

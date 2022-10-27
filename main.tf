@@ -1,6 +1,14 @@
 locals {
   description = "Private zone for ${var.name}"
   managed_by  = "terraform"
+
+  common_tags = merge(var.additional_tags, {
+    "Name"          = var.name
+    "ProductDomain" = var.product_domain
+    "Environment"   = var.environment
+    "Description"   = local.description
+    "ManagedBy"     = local.managed_by
+  })
 }
 
 resource "aws_route53_zone" "main" {
@@ -20,11 +28,5 @@ resource "aws_route53_zone" "main" {
   comment       = local.description
   force_destroy = var.force_destroy
 
-  tags = {
-    "Name"          = var.name
-    "ProductDomain" = var.product_domain
-    "Environment"   = var.environment
-    "Description"   = local.description
-    "ManagedBy"     = local.managed_by
-  }
+  tags = local.common_tags
 }
